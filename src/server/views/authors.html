@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+
+  {% for title in authors %}
+    <a href="/authors/{{title.id}}/edit"><button>edit</button></a>
+    <a href="/authors/{{title.id}}/delete"><button>remove</button></a>
+ 	<a href="/authors/{{title.id}}"><img src="{{ title.image }}"></a>
+    <h1>{{ title.name }}</h1>
+    <h4>{{ title.biography }}</h4>
+
+{% endfor %}
+  </div>
+
+
+{% endblock %}

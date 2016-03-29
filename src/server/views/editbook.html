@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <section>
+
+<div class="container">
+{% for books in books %}
+
+<form method="POST" action="/books/{{books.id}}/edit">
+<h3>Title</h3>
+<input type="text" value="{{ books.title }}" name="title"></input>
+
+<h3>Genre</h3>
+<input type="location" value="{{books.genre}}" name="genre"></input>
+
+<br>
+
+<h3>Image</h3>
+<input value="{{books.image}}" type="text" name="image"></input>
+	
+
+<h3>Description</h3>
+  <div class="form-group">
+    <label for="inputlg"></label>
+    <input class="form-control input-lg" id="inputlg" name="description" value="{{books.description}}" type="text">
+  </div>
+
+  <h3>Author</h3>
+<input type="cuisine" value="Author" name="author"></input>
+<br>
+<br>
+      <input class="btn btn-md btn-primary btn-block" type="submit" value='Submit'/>
+      {% endfor %}
+
+
+</form>
+</div>
+<br>
+<br>
+
+</section>
+
+{% endblock %}

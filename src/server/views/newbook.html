@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+<section>
+
+<div class="container">
+<form method="POST" action="/books/new">
+<h3>Title</h3>
+<input type="text" placeholder="Title" name="title"></input>
+
+<h3>Genre</h3>
+<input type="location" placeholder="Genre" name="genre"></input>
+
+<br>
+
+<h3>Image</h3>
+<input type="cuisine" placeholder="Image URL" name="image"></input>
+
+
+<h3>Description</h3>
+  <div class="form-group">
+    <label for="inputlg"></label>
+    <input class="form-control input-lg" id="inputlg" name="description" type="text">
+  </div>
+
+  <h3>Author</h3>
+<input type="cuisine" placeholder="Author" name="author"></input>
+<br>
+<br>
+      <input class="btn btn-md btn-primary btn-block" type="submit" value='Submit'/>
+      
+
+
+</form>
+</div>
+<br>
+<br>
+
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+<section>
+
+<div class="container">
+<form method="POST" action="/authors/new">
+<h3>Name</h3>
+<input type="text" placeholder="Name" name="name"></input>
+
+<br>
+
+<h3>Image</h3>
+<input type="cuisine" placeholder="Image URL" name="image" ></input>
+
+
+<h3>Biography</h3>
+  <div class="form-group">
+    <label for="inputlg"></label>
+    <input class="form-control input-lg" id="inputlg" name="biography" type="text">
+  </div>
+
+  <h3>Books</h3>
+<input type="cuisine" placeholder="Books" name="books"></input>
+<br>
+<br>
+      <input class="btn btn-md btn-primary btn-block" type="submit" value='Submit'/>
+      
+
+
+</form>
+</div>
+<br>
+<br>
+
+</section>
+
+{% endblock %}

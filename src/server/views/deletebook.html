@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+
+  {% for title in books %}
+     <form method="POST" action="/books/{{title.id}}/delete">
+
+ 	<img src="{{ title.image }}">
+    <h1>{{ title.title }}</h1>
+    <h4>{{ title.genre }}</h4>
+    <p>{{ title.description }}</p>
+    
+    <button type="delete">delete</button>
+    </form>
+{% endfor %}
+  </div>
+
+
+{% endblock %}

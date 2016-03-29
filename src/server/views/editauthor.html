@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+ <section>
+
+<div class="container">
+{% for authors in authors %}
+<form method="POST" action="/authors/{{authors.id}}/edit">
+
+<h3>Name</h3>
+<input type="text" value="{{authors.name}}" name="name"></input>
+
+<br>
+
+<h3>Image</h3>
+<input type="cuisine" value="{{authors.image}}" name="image"></input>
+
+
+<h3>Biography</h3>
+  <div class="form-group">
+    <label for="inputlg"></label>
+    <input class="form-control input-lg" name="biography" value="{{authors.biography}}" id="inputlg" type="text">
+  </div>
+
+  <h3>Books</h3>
+<input type="cuisine" value="Books" name="books"></input>
+<br>
+<br>
+      <input class="btn btn-md btn-primary btn-block" type="submit" value='Submit'/>
+      
+
+{% endfor %}
+</form>
+</div>
+<br>
+<br>
+
+</section>
+{% endblock %}

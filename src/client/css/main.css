@@ -1,0 +1,27 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+img{
+	height: 300px;
+	width: 250px;
+}
+
+#move{
+	margin-right: 25px;
+	float: right;
+}
+
+#moves{
+	margin-left: 25px;
+	float: left;
+}
+
+.container{
+	margin-top: 50px;
+}
