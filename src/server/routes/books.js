@@ -4,13 +4,13 @@ var knex = require('../../../db/knex');
 
 //view all books
 router.get('/', function(req, res, next) {
-		// knex.select('*').from('books')
-	knex.select(
-		'books.id','books.title', 'books.genre', 'books.description', 
-		'books.image', 'authors.name')
-		.from('books')
-		.leftJoin('book_lists', 'books.id', 'book_id')
-		.leftJoin('authors', 'authors.id', 'book_lists.author_id')	
+		knex.select('*').from('books')
+	// knex.select(
+	// 	'books.id','books.title', 'books.genre', 'books.description', 
+	// 	'books.image', 'authors.name')
+	// 	.from('books')
+	// 	.leftJoin('book_lists', 'books.id', 'book_id')
+	// 	.leftJoin('authors', 'authors.id', 'book_lists.author_id')	
 		.then(function(data){
 		// console.log(data)
 	 res.render('books', { 'books': data});
@@ -33,6 +33,11 @@ router.post('/new', function(req, res, next){
 		image: req.body.image,
 		description: req.body.description
 	}).then(function(data){
+		knex('authors').insert({
+			name: data.author,
+			image: data.image,
+			biography: data.biography
+		})
 		console.log(data)
 		res.redirect('/books')
 
@@ -45,12 +50,13 @@ router.get('/:id', function(req, res, next) {
 		// knex.from('books').where('id', id)
 	knex.select(
 		'books.id','books.title', 'books.genre', 'books.description', 
-		'books.image', 'authors.name')
+		'books.image', 'authors.name', 'authors.id')
 		.from('books')
 		.leftJoin('book_lists', 'books.id', 'book_id')
 		.leftJoin('authors', 'authors.id', 'book_lists.author_id')
 		.where('books.id', id)	
 		.then(function(data){
+			// console.log(data)
   	res.render('books', { books: data });
 	})
 });
