@@ -35,8 +35,13 @@ router.post('/new', function(req, res, next){
 //views single author
 router.get('/:id', function(req, res, next) {
 	var id = req.params.id
-	knex.from('authors').where('id', id)
-	.then(function(data){
+ 	knex.select('books.title', 'authors.name','authors.image','authors.biography')
+		.from('authors')
+		.leftJoin('book_lists', 'authors.id', 'author_id')
+		.leftJoin('books', 'books.id', 'book_lists.book_id')
+		.where('authors.id', id)	
+		.then(function(data){
+
   	res.render('authors', { authors: data });
 	})
 });
@@ -44,8 +49,12 @@ router.get('/:id', function(req, res, next) {
 //views single edit page
 router.get('/:id/edit', function(req, res, next) {
 	var id = req.params.id
-	knex.from('authors').where('id', id)
-	.then(function(data){
+	knex.select('books.title', 'authors.name','authors.image','authors.biography')
+		.from('authors')
+		.leftJoin('book_lists', 'authors.id', 'author_id')
+		.leftJoin('books', 'books.id', 'book_lists.book_id')
+		.where('authors.id', id)	
+		.then(function(data){
   	res.render('editauthor', { authors: data });
 	})
 });
@@ -67,8 +76,12 @@ router.post('/:id/edit', function(req, res, next) {
 //views delete page of single author
 router.get('/:id/delete', function(req, res, next){
 	var id = req.params.id
-	knex('authors').where('id', id)
-	.then(function(data){
+	knex.select('books.title', 'authors.name','authors.image','authors.biography')
+		.from('authors')
+		.leftJoin('book_lists', 'authors.id', 'author_id')
+		.leftJoin('books', 'books.id', 'book_lists.book_id')
+		.where('authors.id', id)	
+		.then(function(data){
 		res.render('deleteauthor', {authors: data})
 	})
 })
