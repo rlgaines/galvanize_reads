@@ -32,7 +32,7 @@ router.post('/new', function(req, res, next){
 			image: data.image,
 			biography: data.biography
 		})
-		console.log('SWAG!!!',data)
+		// console.log('SWAG!!!',data)
 		res.redirect('/books')
 
 	})
@@ -44,13 +44,13 @@ router.get('/:id', function(req, res, next) {
 		// knex.from('books').where('id', id)
 	knex.select(
 		'books.id','books.title', 'books.genre', 'books.description', 
-		'books.image', 'authors.name', 'authors.id')
+		'books.image', 'authors.id','authors.name')
 		.from('books')
 		.leftJoin('book_lists', 'books.id', 'book_id')
 		.leftJoin('authors', 'authors.id', 'book_lists.author_id')
 		.where('books.id', id)	
 		.then(function(data){
-			// console.log(data)
+			console.log('SINGLE BOOK',data)
   	res.render('books', { books: data });
 	})
 });

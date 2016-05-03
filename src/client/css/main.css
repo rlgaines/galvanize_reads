@@ -26,7 +26,7 @@ img{
 	margin-top: 50px;
 }
 
-/**{
+*{
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -57,8 +57,8 @@ body {
 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 font-size: 14px;
 line-height: 1.42857143;
-color: #fff;
-background-color: #F1F1F1;
+/*color: #fff;
+*/background-color: #F1F1F1;
 }
 
 .bg_blur{
@@ -107,4 +107,4 @@ background-color: #F1F1F1;
     .nav{
         margin-top : 30px;
     }
-}*/
+}

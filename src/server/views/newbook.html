@@ -4,7 +4,7 @@
 
 
 {% block content %}
-<section>
+<!-- <section>
 
 <div class="container">
 <form method="POST" action="/books/new">
@@ -47,10 +47,94 @@
 
 </form>
 </div>
-<br>
-<br>
 
-</section>
+</section> -->
 
 
+<form method="POST" action="/books/new">
+
+<div class="container">
+    <hr>
+  </div>
+      <div class="container" id="shipping">
+
+        <h2>Add New Book</h2>
+      </div>
+      <!-- Names for Shipping
+ -->
+  <div class="container" id="names">
+    <div class="row">
+      <div class="col-xs-12 col-md-4 col-lg-4">
+            <div class="input-group input-group-sm">
+              <span class="input-group-addon" id="sizing-addon3">Title</span>
+              <input type="text" name="title" class="form-control shipping" aria-describedby="sizing-addon3" id="shipFirstNm">
+            </div>
+      </div>
+
+      <div class= "col-xs-12 col-md-4 col-lg-4">
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon" id="sizing-addon3">Genre</span>
+            <input type="text" name="genre" class="form-control shipping" aria-describedby="sizing-addon3" id="shipLastNm">
+            </div>
+      </div>
+        <div class= "col-xs-12 col-md-4 col-lg-4">
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon" id="sizing-addon3">Author's Name</span>
+            <input type="text" name="author" class="form-control shipping" aria-describedby="sizing-addon3" id="shipComp">
+            </div>
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+<!--       Address line for shipping
+ -->
+  <div class="container" id="address">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-6">
+            <div class="input-group input-group-sm">
+              <span class="input-group-addon" id="sizing-addon3">Description</span>
+              <input type="text" name="description" class="form-control shipping" aria-describedby="sizing-addon3" id="shipAdd1">
+            </div>
+      </div>
+      <div class= "col-xs-12 col-md-6 col-lg-6">
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon" id="sizing-addon3">Book Image URL</span>
+            <input type="text" name="image" class="form-control shipping" aria-describedby="sizing-addon3" id="shipAdd2">
+            </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+   <!--    State, Zipcode, and button to copy all shipping information to Billing -->
+
+   <div class="container" id="state">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-6">
+            <div class="input-group input-group-sm">
+              <span class="input-group-addon" id="sizing-addon3">Author's Image URL</span>
+              <input type="text" name="image" class="form-control shipping" aria-describedby="sizing-addon3" id="shipSt">
+            </div>
+      </div>
+      <div class= "col-xs-12 col-md-6 col-lg-6">
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon" id="sizing-addon3">Author's Description</span>
+            <input type="text" name="biography" class="form-control shipping" aria-describedby="sizing-addon3" id="shipZip">
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+  <button type="submit" class="btn btn-default btn-sm" id="button">
+  <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span> SUBMIT
+</button>
+</div>
+</div>
+
+</form>
 {% endblock %}
