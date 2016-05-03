@@ -5,12 +5,6 @@ var knex = require('../../../db/knex');
 //view all books
 router.get('/', function(req, res, next) {
 		knex.select('*').from('books')
-	// knex.select(
-	// 	'books.id','books.title', 'books.genre', 'books.description', 
-	// 	'books.image', 'authors.name')
-	// 	.from('books')
-	// 	.leftJoin('book_lists', 'books.id', 'book_id')
-	// 	.leftJoin('authors', 'authors.id', 'book_lists.author_id')	
 		.then(function(data){
 		// console.log(data)
 	 res.render('books', { 'books': data});
@@ -38,7 +32,7 @@ router.post('/new', function(req, res, next){
 			image: data.image,
 			biography: data.biography
 		})
-		console.log(data)
+		console.log('SWAG!!!',data)
 		res.redirect('/books')
 
 	})
