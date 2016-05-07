@@ -43,7 +43,7 @@ router.get('/:id', function(req, res, next) {
 		.where('authors.id', id)	
 		.then(function(data){
 			console.log(data)
-  	res.render('authors', { authors: data });
+  	res.render('singleauthor', { authors: data });
 	})
 });
 
